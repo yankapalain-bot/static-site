@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Space Explorer Profile</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Title Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #resetBtn {
+            display: none; /* hidden initially */
+        }
+    </style>
 </head>
 <body>
-  <div id="profile-card">
-    <h1 id="explorer-name" title="Double-click to rename!">Commander Alex</h1>
-    <p class="explorer-title">Astronaut in Training 🚀</p>
-    <ul class="explorer-stats">
-      <li>🪐 Favourite planet: <strong>Saturn</strong></li>
-      <li>🌙 Moon landings: <strong>0 (so far!)</strong></li>
-      <li>⭐ Skills: <strong>HTML · CSS · JavaScript</strong></li>
-    </ul>
-    <button id="launch-btn">✨ Launch Mission</button>
-    <p id="mission-status"></p>
-  </div>
+
+    <h1 id="mainTitle">My Original Title</h1>
+
+    <button onclick="changeTitle()">Clik me!</button>
+    <button id="resetBtn" onclick="resetTitle()">Reset</button>
+
+    <script>
+        const title = document.getElementById("mainTitle");
+        const resetBtn = document.getElementById("resetBtn");
+
+        function changeTitle() {
+            title.textContent = "The Title Has Changed by JavaScript!!";
+            title.style.color = "blue";
+            title.style.backgroundColor = "green";
+            resetBtn.style.display = "inline-block"; // show reset button
+        }
+
+        function resetTitle() {
+            title.textContent = "My Original Title";
+            title.style.color = "";
+            title.style.backgroundColor = "";
+            resetBtn.style.display = "none"; // hide reset button again
+        }
+    </script>
+
 </body>
 </html>
